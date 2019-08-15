@@ -30,20 +30,29 @@
         task: {
           done: doneValue
         }
-      }).success(function(data) {
-        var liHtml = taskHtml(data);
-        var $li = $("#listItem-" + data.id);
-        $li.replaceWith(liHtml);
-        $('.toggle').change(toggleTask);
+        
+    }).success(function(data) {
+      var liHtml = taskHtml(data);
+      var $li = $("#listItem-" + data.id);
+      $li.replaceWith(liHtml);
+      $('.toggle').change(toggleTask);
+
+
       } );
-    }
+
+
+    }   
 
     $.get("/tasks").success( function( data ) {
       var htmlString = "";
 
       $.each(data, function(index,  task) {
+
+
         htmlString += taskHtml(task);
       });
+
+
       var ulTodos = $('.todo-list');
       ulTodos.html(htmlString);
 
@@ -63,9 +72,11 @@
     $.post("/tasks", payload).success(function(data) {
       var htmlString = taskHtml(data);
       var ulTodos = $('.todo-list');
-      ulTodos.append(htmlString);
-      $('.toggle').click(toggleTask);
-      $('.new-todo').val('');
+          ulTodos.append(htmlString);
+          $('.toggle').click(toggleTask);
+              $('.new-todo').val('');
+
+
       });
     });
 
