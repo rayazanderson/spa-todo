@@ -116,9 +116,6 @@ input[type="checkbox"] {
   border-top: 1px solid #e6e6e6;
 }
 
-label[for='toggle-all'] {
-  display: none;
-}
 
 .toggle-all {
   position: absolute;
@@ -127,7 +124,7 @@ label[for='toggle-all'] {
   width: 60px;
   height: 34px;
   text-align: center;
-  border: none; /* Mobile Safari */
+  border: 5px; /* Mobile Safari */
 }
 
 .toggle-all:before {
@@ -348,7 +345,7 @@ html .clear-completed:active {
   Can't use it globally since it destroys checkboxes in Firefox
 */
 @media screen and (-webkit-min-device-pixel-ratio:0) {
-  .toggle-all,
+ .toggle-all,
   .todo-list li .toggle {
     background: none;
   }

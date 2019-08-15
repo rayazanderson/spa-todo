@@ -60,12 +60,12 @@
           title: textbox.val()
         }
       };
-      $.post("/tasks", payload).success(function(data) {
-        var htmlString = taskHtml(data);
-        var ulTodos = $('.todo-list');
-        ulTodos.append(htmlString);
-        $('.toggle').click(toggleTask);
-        $('.new-todo').val('');
+    $.post("/tasks", payload).success(function(data) {
+      var htmlString = taskHtml(data);
+      var ulTodos = $('.todo-list');
+      ulTodos.append(htmlString);
+      $('.toggle').click(toggleTask);
+      $('.new-todo').val('');
       });
     });
 
